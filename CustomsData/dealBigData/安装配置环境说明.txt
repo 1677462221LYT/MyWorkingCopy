@@ -1,0 +1,37 @@
+﻿#####################
+###  安装配置环境说明  ###
+#####################
+
+1. 安装Python v3.7+
+	官方：https://www.python.org/downloads/
+	国内镜像：https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fpython
+	  运行下载的MSI安装包，在选择安装组件的一步时，勾上所有的组件
+	  特别要注意选上pip和Add python.exe to Path，然后一路点“Next”即可完成安装。
+	  默认会安装到C:\Python27目录下，然后打开命令提示符窗口，敲入python，出现>>>即安装成功
+
+2. 安装Navicat v12.0.29+
+	官方：http://www.navicat.com.cn/download/navicat-premium
+	注册机文件：lib目录下 Navicat_Keygen_Patch_v3.4_By_DFoX_URET.rar
+	参考文档：https://blog.csdn.net/xueqiang03/article/details/80702771
+
+3. 安装UnRADLL
+	运行UnRARDLL.exe 安装到默认路径下并添加到系统环境变量
+	UnRARDLL.exe文件：lib目录下UnRARDLL.exe，双击即可开始安装
+	安装最好选择默认路径，一般在 C:\Program Files (x86)\UnrarDLL\ 目录下
+	添加环境变量：此电脑（我的电脑）右键，属性，高级系统设置，高级 选项卡，环境变量
+		在系统变量中 新建，变量名输入 UNRAR_LIB_PATH 
+			64位系统，输入 C:\Program Files (x86)\UnrarDLL\x64\UnRAR64.dll
+			32位系统输入 C:\Program Files (x86)\UnrarDLL\UnRAR.dll
+	参考文档：https://blog.csdn.net/ysy950803/article/details/52939708
+
+4.下载相关库文件
+	win+R进入cmd窗口，输入以下命令：
+		pip3 install unrar
+		pip3 install pymysql
+
+5.处理步骤：
+	a.新建处理文件夹（以日期版本命名，如201706），将要导入的数据文件压缩包复制到处理文件夹下
+		注意：数据压缩包文件格式有要求，每个压缩包中只能包含一个.mdb或.accdb文件,若有其他格式文件，请务必先删除
+	b.打开config.ini文件，进行相关配置
+	c.用文本工具打开dealBigData.bat程序，将本项目文件夹路径替换至bat脚本文件中并保存
+	d.双击dealBigData.bat执行程序
